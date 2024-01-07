@@ -1,2 +1,4 @@
 boardgame\Position.class
 application\Program.class
+boardgame\Board.class
+boardgame\Piece.class
