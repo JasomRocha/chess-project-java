@@ -1,4 +1,8 @@
-boardgame\Position.class
 application\Program.class
+application\UI.class
+chess\ChessPiece.class
+chess\Color.class
 boardgame\Board.class
+boardgame\Position.class
 boardgame\Piece.class
+chess\ChessMacth.class
