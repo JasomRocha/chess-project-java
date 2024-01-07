@@ -42,4 +42,10 @@ public class Board {
      public Piece piece(Position position){
         return pieces[position.getRow()][position.getColumn()];
     }
+     
+     public void placePiece(Piece piece, Position position){ //Função que atribui a posição à peça informada, ou seja recebe a peça e atribui a uma determinada posição.
+         pieces[position.getRow()][position.getColumn()] = piece;
+         piece.position = position; //Consigo acessar esse atributo pois ele é protected
+     } 
+     
 }

@@ -1,6 +1,9 @@
 package chess;
 
 import boardgame.Board;
+import boardgame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 
 /**
  *
@@ -11,6 +14,7 @@ public class ChessMacth {
 
     public ChessMacth() {
         board = new Board(8, 8); //Define o tamanho do tabuleiro no construtor
+        initialSetup();
     }
     
     public ChessPiece[][] getPieces(){
@@ -25,6 +29,11 @@ public class ChessMacth {
         return mat;
     }
     
+    private void initialSetup(){
+        board.placePiece(new Rook(Color.WHITE, board), new Position(0,1));
+        board.placePiece(new King(Color.WHITE, board), new Position(7,4));
+        board.placePiece(new King(Color.BLACK, board), new Position(0,4));
+    }
     
     
     
