@@ -29,10 +29,16 @@ public class ChessMacth {
         return mat;
     }
     
+    private void placeNewPiece(char column, int row, ChessPiece piece){
+        board.placePiece(piece, new ChessPosition(column, row).toPosition());
+    }
+    
     private void initialSetup(){
-        board.placePiece(new Rook(Color.WHITE, board), new Position(0,2));
-        board.placePiece(new King(Color.WHITE, board), new Position(7,4));
-        board.placePiece(new King(Color.BLACK, board), new Position(0,4));
+        placeNewPiece('b', 8, new Rook(Color.WHITE, board));
+        placeNewPiece('e', 8, new King(Color.WHITE, board));
+        placeNewPiece('e', 1, new King(Color.BLACK, board));
+        placeNewPiece('b', 1, new Rook(Color.BLACK, board));
+       
     }
     
     
