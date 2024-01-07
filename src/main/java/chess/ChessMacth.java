@@ -30,7 +30,7 @@ public class ChessMacth {
     }
     
     private void initialSetup(){
-        board.placePiece(new Rook(Color.WHITE, board), new Position(0,1));
+        board.placePiece(new Rook(Color.WHITE, board), new Position(0,2));
         board.placePiece(new King(Color.WHITE, board), new Position(7,4));
         board.placePiece(new King(Color.BLACK, board), new Position(0,4));
     }
