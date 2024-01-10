@@ -5,6 +5,8 @@ import boardgame.Piece;
 import boardgame.Position;
 import chess.pieces.King;
 import chess.pieces.Rook;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,8 +16,10 @@ public class ChessMacth {
     private Board board;
     private int turn;
     private Color currentPlayer;
+    private List<Piece> piecesOnTheBoard = new ArrayList<>();
+    private List<Piece> capturedPieces = new ArrayList<>();
     
-   
+    
     public ChessMacth() {
         board = new Board(8, 8); //Define o tamanho do tabuleiro no construtor
         turn = 1;
@@ -64,6 +68,10 @@ public class ChessMacth {
         Piece p = board.removePiece(source);
         Piece capturedPiece = board.removePiece(target);
         board.placePiece(p, target);
+        if (capturedPieces != null){
+            piecesOnTheBoard.remove(capturedPiece);
+            capturedPieces.add(capturedPiece);
+        }
         return capturedPiece;
     }
     
@@ -93,6 +101,7 @@ public class ChessMacth {
     }
     private void placeNewPiece(char column, int row, ChessPiece piece){
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
+        piecesOnTheBoard.add(piece);
     }
     
     private void initialSetup(){
