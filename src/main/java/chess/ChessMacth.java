@@ -90,7 +90,8 @@ public class ChessMacth {
     
     
     private Piece makeMove(Position source, Position target){
-        Piece p = board.removePiece(source);
+        Piece p = (ChessPiece) board.removePiece(source);
+        p.increase
         Piece capturedPiece = board.removePiece(target);
         board.placePiece(p, target);
         if (capturedPieces != null){
