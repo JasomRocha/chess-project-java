@@ -53,6 +53,20 @@ public class Board {
          piece.position = position; //Consigo acessar esse atributo pois ele é protected
      } 
      
+     public Piece removePiece(Position position){
+       if(!positionExists(position)){ //Programação defensiva
+            throw new BoardException("Position not on the board.");
+        } 
+       if (piece(position) == null){
+           return null;
+       }
+       Piece aux = piece(position);
+       aux.position = null;
+
+       pieces[position.getRow()][position.getColumn()] = null;
+       return aux;
+     }
+     
      private boolean positionExists(int row, int column){ //Metodo auxiliar, testa os argumentos do objeto position passado pela funcao que a invocou 
          return (row>=0 && row<rows && column >=0 && column < columns);
      }
